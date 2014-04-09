@@ -1,4 +1,4 @@
-AngularJSEx
+AngularJSEx (Alpa)
 ===========
 
 AngularEx.js overvide the angular module function. The Goal is:
