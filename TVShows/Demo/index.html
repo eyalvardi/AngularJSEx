@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html ng-app="TVPremieresApp">
+<head>
+    <title>TV Show Premieres</title>
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/bootstrap-responsive.min.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/05 - Routing/css/ngViewAnimation.css" />
+    
+    <script type="text/javascript" src="/Scripts/angular.js"></script>
+    <script src="/AngularEx/AngularEx.Base.js"></script>
+    <script src="/AngularEx/AngularEx.ModulesDumper.js"></script>
+    <script src="/AngularEx/AngularEx.SimplifyRequires.js"></script>
+
+    <!-- AngularEx Plugin -->
+    <link href="/AngularEx.Plugin/angular.treeview/css/angular.treeview.css" rel="stylesheet" />
+    <script src="/AngularEx.Plugin/angular.treeview/angular.treeview.min.js"></script>
+    <link href="/AngularEx.Plugin/angularEX.css" rel="stylesheet" />
+    <script src="/AngularEx.Plugin/AngularEx.Directives.js"></script>
+
+    <script type="text/javascript" src="/Scripts/angular-animate.js"></script>
+    <script type="text/javascript" src="/Scripts/angular-route.js"></script>
+    <script type="text/javascript" src="/demo/modules/angular-local-storage.js"></script>
+
+    <script src="/Scripts/ui-bootstrap-0.10.0.js"></script>
+    <script src="/Scripts/ui-bootstrap-tpls-0.10.0.min.js"></script>
+
+    <script type="text/javascript" src="/demo/modules/filters.js"></script>
+    <script type="text/javascript" src="/demo/modules/services.js"></script>
+    <script type="text/javascript" src="/demo/modules/directives.js"></script>
+                                        
+    <script type="text/javascript" src="/demo/app.js"></script>
+                                         
+    <!-- controllers -->                 
+    <script type="text/javascript" src="/demo/controllers/mainController.js"></script>
+    <script type="text/javascript" src="/demo/controllers/genreController.js"></script>
+
+</head>
+<script>
+    window.angularExDebug = true;
+    window.angularExOptimizeRequires = true;
+</script>
+<body>
+    <div angularex></div>
+    <div class='banner'>
+        <div class='container'>
+            <h1>TV SHOW PREMIERES</h1>
+        </div>
+    </div>
+
+    <div class="container main-frame"
+         ng-controller="mainController"
+         ng-init="init()">
+
+        <!-- Search Toolbar version 1
+            <div search-toolbar ></div>
+            -->
+        <!-- Search Toolbar version 2 -->
+        <div search-toolbar
+             frilter-text="filterText"
+             genre-filter="genreFilter"
+             order-field="orderField"
+             order-reverse="orderReverse"
+             available-genres="{{availableGenres}}"
+             order-fields="{{orderFields}}"></div>
+
+        <div class="row">
+            <!-- Genres Toolbar -->
+            <div class="span3">
+                <div tv-genres genres="availableGenres"></div>
+                <!--<div ng-include="'templates/genreToolbar.html'"></div>-->
+            </div>
+
+            <div class="span9">
+                <div ng-view=""></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

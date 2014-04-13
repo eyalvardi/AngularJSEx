@@ -1,0 +1,21 @@
+﻿<div class="row-fluid">
+    <div class="span6">
+        <img src="{{tvshow.episode.images.screen}}" />
+        <div class="ratings">
+            <strong>Ratings:</strong>
+            <span class="label">
+                <i class="icon-thumbs-up"></i>
+                {{tvshow.episode.ratings.loved}}
+            </span>
+            <span class="label">
+                <i class="icon-thumbs-down"></i>
+                {{tvshow.episode.ratings.hated}}
+            </span>
+            <span class="label label-important" ng-class="{'label-success': tvshow.episode.ratings.percentage >= 50}"><strong>%</strong> {{tvshow.episode.ratings.percentage}}</span>
+        </div>
+    </div>
+    <div class="span6">
+        <h3>{{tvshow.show.title}}: {{tvshow.episode.title}}</h3>
+        <p>{{tvshow.episode.overview}}</p>
+    </div>
+</div>

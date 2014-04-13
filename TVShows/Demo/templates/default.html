@@ -1,0 +1,9 @@
+﻿<div class="results-top"></div>
+<div class="results-container">
+    <ul class="episode-list">
+        <div tv-show
+             ng-repeat="tvshow in results | filter: filterText | isGenre: genreFilter | orderBy: customOrder:orderReverse">
+        </div>
+    </ul>
+</div>
+<div class="results-bottom"></div>

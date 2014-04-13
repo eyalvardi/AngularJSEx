@@ -1,0 +1,46 @@
+﻿ng-view {
+  display: block;
+  border: 1px dashed black;
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  top: 20%;
+}
+
+.ng-enter {
+  -webkit-animation: enter 1s cubic-bezier(.17,.67,.83,.67);
+  animation: enter 1s cubic-bezier(.17,.67,.83,.67);
+}
+
+.ng-leave {
+  -webkit-animation: enter 1s ease-out reverse;
+  animation: enter 1s ease-out reverse;
+}
+
+@-webkit-keyframes enter {
+  0% {
+    background: #f80;
+    top: 100%;
+  }
+  70% {
+    background: #f08;
+  }
+  100% {
+    background: #8f8;
+    top: 20%;
+  }
+}
+
+@keyframes enter {
+  0% {
+    background: #f80;
+    top: 100%;
+  }
+  70% {
+    background: #f08;
+  }
+  100% {
+    background: #8f8;
+    top: 20%;
+  }
+}
