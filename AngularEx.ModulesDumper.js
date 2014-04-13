@@ -4,12 +4,18 @@
         appModule = undefined,
         rootElement = {},
         requires = [],
-       
+
         isString = angular.isString,
         isArray = angular.isArray,
         isFunction = angular.isFunction;
 
-   
+    window.angularEx = {
+        appModule: appModule,
+        modules: originalModules,
+        addRequiretongApp: addRequiretongApp,
+        printModuleTree: printModuleTree,
+        getModulesTree: getModulesTree
+    };
 
     //DEFER_BOOTSTRAP!
     window.name = 'NG_DEFER_BOOTSTRAP!';
@@ -17,12 +23,12 @@
     /////////////////////////////////////////
     //  AngularJS override module function
     ////////////////////////////////////////
-    angular.module = function (moduleName, req,config) {
+    angular.module = function (moduleName, req, config) {
         var mi = moduleFn(moduleName, req, config);
         originalModules[mi.name] = mi;
         return mi;
     };
-    
+
 
     /////////////////////////////////////////
     //   Document Ready
@@ -30,21 +36,16 @@
     angular.element(document).ready(function () {
 
         findNgAppElement(window.document);
-
-        window.angularEx = {
-            appModule: appModule,
-            modules: originalModules,
-            printModuleTree: printModuleTree,
-            getModulesTree: getModulesTree
-        };
-
         angular.resumeBootstrap([]);
     });
 
     /////////////////////////////////////////
     //   AngularEx Functions
     ////////////////////////////////////////
-    
+    function addRequiretongApp(name) {
+        requires.push(name);
+    }
+
     function deleteModuleInTree(module, originalmodules) {
         if (!module || !module.requires || module.requires.length == 0) return;
         forEach(module.requires, function (name) {
@@ -153,7 +154,7 @@
 
         return items;
     }
-    
+
     /////////////////////////////////////////
     //   AngularJS Methods (Copy)
     ////////////////////////////////////////
@@ -200,6 +201,7 @@
         if (appElement) {
             if (!appModule) {
                 appModule = originalModules[module];
+                appModule.requires = appModule.requires.concat(requires);
             }
             rootElement = angular.element(appElement);
         }
