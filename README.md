@@ -11,6 +11,9 @@ AngularJSEx
    - Expose getModulesTree method. This method return json object of module tree.
    - Expose printModuleTree method. This method print the tree to console.
 
-3. AngularEx.SimplifyRequires.js
+3. AngularEx.Directives.js goals:
+   - angularex directive build modules treeview. The tree will open and close by clicking on the '+' button.
+
+4. AngularEx.SimplifyRequires.js
    - Each module is created, Add to the requires of the main module automatic.
    - If you try to get module and it doesn't exist, It create it.
