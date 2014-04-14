@@ -9,7 +9,7 @@ AngularJSEx
 
 2. AngularEx.ModulesDumper.js goals: (Dependent on AngularEx.Base.js )
    - Expose getModulesTree method. This method return json object of module tree.
-   - Expose printModuleTree method. This method print the tree to console.
+   - Expose printModuleTree method. This method print the tree to the console.
 
 3. AngularEx.Directives.js goals: (Dependent on AngularEx.ModulesDumper.js and base )
    - angularex directive build modules treeview. The tree will open and close by clicking on the '+' button.
