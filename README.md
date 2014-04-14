@@ -15,5 +15,5 @@ AngularJSEx
    - angularex directive build modules treeview. The tree will open and close by clicking on the '+' button.
 
 4. AngularEx.SimplifyRequires.js goals: (Dependent on AngularEx.Base.js )
-   - Each module is created, Add to the requires of the main module automatic.
+   - Each module that created is Added to the requires of the main module automatic.
    - If you try to get module and it doesn't exist, It create it.
